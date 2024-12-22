@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="daily-rutin-planer.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <br />
+    <hr />
+    <br />
+    <header>
+      <div id="head"><h1>daily-routine-planer</h1></div>
+    </header>
+
+    <main>
+      <section id="daily-routine">
+        <h2>Daily Routine</h2>
+        <ul id="routine-list">
+          <!-- Daily routine items will be injected here -->
+        </ul>
+        <input
+          type="text"
+          id="routine-input"
+          placeholder="Add new routine task" />
+        <button onclick="addRoutineTask()">Add Task</button>
+        <button class="erase-button" onclick="eraseRoutineTasks()">
+          Erase All
+        </button>
+      </section>
+
+      <section id="water-reminders">
+        <h2>Water Reminder</h2>
+        <p>Drink water every <span id="interval">1</span> hour(s)</p>
+        <button onclick="startWaterReminder()">Start Reminder</button>
+        <button class="erase-button" onclick="resetWaterReminder()">
+          Erase
+        </button>
+        <input type="number" id="water-interval-input" value="1" min="1" />
+        Hour(s)
+      </section>
+
+      <section id="todo-list">
+        <h2>To-Do List</h2>
+        <ul id="todo-list-items">
+          <!-- To-do items will be injected here -->
+        </ul>
+        <input type="text" id="todo-input" placeholder="Add new to-do item" />
+        <button onclick="addTodoItem()">Add To-Do</button>
+        <button class="erase-button" onclick="eraseTodoItems()">
+          Erase All
+        </button>
+      </section>
+
+      <section id="notes">
+        <h2>Notes</h2>
+        <textarea
+          id="notes-textarea"
+          placeholder="Write your notes here..."></textarea>
+        <button class="erase-button" onclick="eraseNotes()">Erase All</button>
+      </section>
+
+      <section id="ideas">
+        <h2>Ideas</h2>
+        <textarea
+          id="ideas-textarea"
+          placeholder="Write down your best plans here..."></textarea>
+      </section>
+      <section id="goal-tracker">
+        <h2>Goal Tracker</h2>
+        <div id="goal-list">
+          <!-- Goal items will be injected here -->
+        </div>
+        <input type="text" id="goal-input" placeholder="Add a new goal" />
+        <button onclick="addGoal()">Add Goal</button>
+        <button class="erase-button" onclick="eraseGoals()">Erase All</button>
+      </section>
+      <section id="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <ul id="events-list">
+          <!-- Events will be injected here -->
+        </ul>
+        <input type="text" id="event-input" placeholder="Add a new event" />
+        <button onclick="addEvent()">Add Event</button>
+        <button class="erase-button" onclick="eraseEvents()">Erase All</button>
+      </section>
+      <section id="personal-development">
+        <h2>Personal Development</h2>
+        <ul id="development-list">
+          <!-- Development activities will be injected here -->
+        </ul>
+        <input
+          type="text"
+          id="development-input"
+          placeholder="Add a new activity" />
+        <button onclick="addDevelopmentActivity()">Add Activity</button>
+        <button class="erase-button" onclick="eraseDevelopmentActivities()">
+          Erase All
+        </button>
+      </section>
+    </main>
+
+    <section id="data-management">
+      <h2>Data Management</h2>
+      <button onclick="saveData()">Save Data</button>
+      <button onclick="loadData()">Load Data</button>
+      <button onclick="viewSavedData()">View Saved Data</button>
+    </section>
+
+    <!-- Modal for Viewing Saved Data -->
+    <div id="data-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Saved Data</h2>
+        <div id="modal-body">
+          <!-- Saved data will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <h1>Interactive Calendar</h1>
+    </header>
+
+    <main id="cal">
+      <section id="calendar-section">
+        <div id="calendar">
+          <div id="calendar-header">
+            <button id="prev-month">Prev</button>
+            <h2 id="calendar-title"></h2>
+            <button id="next-month">Next</button>
+          </div>
+          <div id="calendar-body">
+            <div class="calendar-day">Sun</div>
+            <div class="calendar-day">Mon</div>
+            <div class="calendar-day">Tue</div>
+            <div class="calendar-day">Wed</div>
+            <div class="calendar-day">Thu</div>
+            <div class="calendar-day">Fri</div>
+            <div class="calendar-day">Sat</div>
+            <!-- Days will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="calendar.js"></script>
+
+    <header>
+      <h1>Interactive Calendar</h1>
+    </header>
+
+    <main id="cal2">
+      <section id="calendar-section">
+        <div id="calendar">
+          <div id="calendar-header">
+            <button id="prev-month">Prev</button>
+            <h2 id="calendar-title"></h2>
+            <button id="next-month">Next</button>
+          </div>
+          <div id="calendar-body">
+            <div class="calendar-day">Sun</div>
+            <div class="calendar-day">Mon</div>
+            <div class="calendar-day">Tue</div>
+            <div class="calendar-day">Wed</div>
+            <div class="calendar-day">Thu</div>
+            <div class="calendar-day">Fri</div>
+            <div class="calendar-day">Sat</div>
+            <!-- Days will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <section id="event-section">
+        <h2>Add Event</h2>
+        <form id="event-form">
+          <input type="date" id="event-date" required />
+          <input
+            type="text"
+            id="event-title"
+            placeholder="Event Title"
+            required />
+          <button type="submit">Save Event</button>
+        </form>
+        <h2>Saved Events</h2>
+        <ul id="event-list">
+          <!-- Saved events will be listed here -->
+        </ul>
+      </section>
+    </main>
+
+    <script src="calendar.js"></script>
+
+    <script src="daily-rutin-planer.js"></script>
+  </body>
+</html>
